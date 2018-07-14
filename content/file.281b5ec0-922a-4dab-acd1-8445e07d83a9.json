@@ -1,0 +1,55 @@
+{
+    "uuid": [
+        {
+            "value": "281b5ec0-922a-4dab-acd1-8445e07d83a9"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "uid": [
+        {
+            "target_type": "user",
+            "target_uuid": "53c2b8f3-0257-4204-9634-6beda11ff012"
+        }
+    ],
+    "filename": [
+        {
+            "value": "martin-adams-736972-unsplash.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2018-07\/martin-adams-736972-unsplash.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1211998
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-07-14T16:49:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-07-14T16:50:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

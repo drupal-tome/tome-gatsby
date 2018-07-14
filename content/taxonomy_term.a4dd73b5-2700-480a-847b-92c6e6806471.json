@@ -1,0 +1,51 @@
+{
+    "uuid": [
+        {
+            "value": "a4dd73b5-2700-480a-847b-92c6e6806471"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "tags",
+            "target_type": "taxonomy_vocabulary",
+            "target_uuid": "0cbc7132-e943-40b1-883c-ddad12d1e49c"
+        }
+    ],
+    "name": [
+        {
+            "value": "cool"
+        }
+    ],
+    "description": [],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "parent": [
+        []
+    ],
+    "changed": [
+        {
+            "value": "2018-07-14T16:50:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en"
+        }
+    ]
+}

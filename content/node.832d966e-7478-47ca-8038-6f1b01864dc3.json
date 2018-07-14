@@ -1,0 +1,120 @@
+{
+    "uuid": [
+        {
+            "value": "832d966e-7478-47ca-8038-6f1b01864dc3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "article",
+            "target_type": "node_type",
+            "target_uuid": "781e3f32-d80d-4042-9003-5df8b862c6d2"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2018-07-14T16:50:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "revision_uid": [
+        {
+            "target_type": "user",
+            "target_uuid": "53c2b8f3-0257-4204-9634-6beda11ff012"
+        }
+    ],
+    "revision_log": [],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "Drupal, Tome, and Gatsby JS? Yes please."
+        }
+    ],
+    "uid": [
+        {
+            "target_type": "user",
+            "target_uuid": "53c2b8f3-0257-4204-9634-6beda11ff012"
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-07-14T16:46:31+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-07-14T16:50:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true
+        }
+    ],
+    "sticky": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true
+        }
+    ],
+    "path": [
+        {
+            "alias": "",
+            "pid": null,
+            "langcode": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>This article will be rendered in&nbsp;<strong>GatsbyJS<\/strong>!<\/p>\r\n\r\n<p>Neato.<\/p>\r\n\r\n<p>Image credit to <a href=\"https:\/\/unsplash.com\/photos\/JM3H_HAzqO0\">Martin Adams<\/a>.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": ""
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 0,
+            "last_comment_name": "",
+            "last_comment_uid": 0,
+            "comment_count": 0
+        }
+    ],
+    "field_image": [
+        {
+            "alt": "A soaring Black Kite bird",
+            "title": "",
+            "width": 4825,
+            "height": 3217,
+            "target_type": "file",
+            "target_uuid": "281b5ec0-922a-4dab-acd1-8445e07d83a9"
+        }
+    ],
+    "field_tags": [
+        {
+            "target_type": "taxonomy_term",
+            "target_uuid": "a4dd73b5-2700-480a-847b-92c6e6806471"
+        }
+    ]
+}
