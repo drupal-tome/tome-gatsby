@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Tome Gatsby Example',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -11,8 +11,15 @@ module.exports = {
         path: '../drupal/content/',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: '../drupal/files/',
+      },
+    },
   ],
   mapping: {
     'ContentJson.fields.field_image': 'ContentJson',
+    'ContentJson.fields.file': 'File',
   },
 }
