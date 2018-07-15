@@ -1,4 +1,5 @@
-/vendor/
-/web
-/html
+/drupal/vendor/
+/drupal/drush
+/drupal/web
+/drupal/html
 .idea

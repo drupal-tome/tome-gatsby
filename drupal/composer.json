@@ -1,6 +1,6 @@
 {
-    "name": "drupal-tome/tome-project",
-    "description": "A starter project for Tome.",
+    "name": "drupal-tome/tome-gatsby",
+    "description": "Tome Gatsby Example.",
     "type": "project",
     "license": "MIT",
     "authors": [

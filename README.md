@@ -1,51 +1,41 @@
-# Composer template for Tome projects
+# tome-gatsby
 
-This project is a great place to start for building brand new Tome projects.
+An example project for using Tome and Gatsby together.
 
-There isn't much here now, but keep posted and let me know if anything doesn't
-work!
+This allows you to use Drupal locally to edit content, and consume that
+content with GatsbyJS to generate a static site.
 
-## Usage
+Your Drupal and Gatsby codebases can live together in one repository!
 
-To create a new Tome project, run:
+# Requirements
 
-```bash
-composer create-project drupal-tome/tome-project my_site --stability dev --no-interaction
-drush tome:init
-```
+1. PHP 7+
+1. [Composer](https://getcomposer.org/download/)
+1. [Drush](https://github.com/drush-ops/drush-launcher)
+1. [NPM](https://www.npmjs.com/get-npm)
 
-To re-install Tome, run:
+# Installation
 
-```bash
-drush tome:install
-```
+To install the project, run:
 
-To start a local webserver, run:
+`./install.sh`
 
-```bash
-drush runserver
-```
+This will install Drupal and Gatsby for you.
 
-When you're ready to build your static site, run:
+# Development
 
-```bash
-drush tome:static
-```
+To run development servers for Drupal and Gatsby, run:
 
-## Symlinks
+`./run.sh`
 
-When composer install or update is ran, the "modules" and "themes" directories,
-as well as the "settings.php" file, is symlinked into the "web" directory.
+Drupal will run at `http://127.0.0.1:8888`, and Gatsby will run at
+`http://127.0.0.1:8000`.
 
-This is done to improve DX, but only works on systems that support `bash`, and
-symlinks. If you're running Windows you'll probably want to write a custom
-script to replace `symlink.sh`, and use the `mklink` command. Pull requests are
-welcome to make this functionality cross-platform by default.
+# Implementation notes
 
-## Further reading
+I decided to use `gatsby-transformer-json` instead of `gatsby-source-drupal`
+because it's much faster to read the already exported JSON than use JSON API.
 
-This project is largely based on [drupal-composer/drupal-project], so it's
-recommended that you consult their [README.md] for more information.
-
-[drupal-composer/drupal-project]: https://github.com/drupal-composer/drupal-project
-[README.md]: https://github.com/drupal-composer/drupal-project/blob/8.x/README.md
+This also means that you can build Gatsby without running Drupal, which is nice
+for splitting up frontend and content editing teams. React experts won't have
+to run or connect to Drupal to create Gatsby sites.
