@@ -22,41 +22,34 @@
 exports.onCreateNode = ({ actions, getNodes }) => {
   const { createNodeField } = actions
 
-  let fields = [];
-
   getNodes()
     .filter(node => node.internal.type === 'ContentJson')
     .forEach(node => {
       Object.keys(node).forEach((field) => {
-        if (node[field].length && node[field][0].target_uuid) {
-          const reference = getNodes()
-            .filter(node2 => node2.internal.type === 'ContentJson')
-            .find(
-              node2 =>
-              node2.uuid &&
-              node2.uuid[0].value === node[field][0].target_uuid
-            )
-
-          if (reference) {
-            fields.push(field);
-            createNodeField({
-              node,
-              name: field,
-              value: [reference.id],
-            })
-          }
+        let references = [];
+        if (Array.isArray(node[field])) {
+          node[field].forEach((value) => {
+            if (value.target_uuid) {
+              const refNode = getNodes()
+                .filter(node2 => node2.internal.type === 'ContentJson')
+                .find(
+                  node2 =>
+                  node2.uuid &&
+                  node2.uuid[0].value === value.target_uuid
+                )
+              if (refNode) {
+                references.push(refNode.id);
+              }
+            }
+          })
         }
-      });
-    })
-
-  if (fields.length) {
-    getNodes()
-      .filter(node => node.internal.type === 'Site')
-      .forEach(node => {
-        node.mapping = node.mapping || {};
-        fields.forEach(field => {
-          node.mapping[`ContentJson.fields.${field}`] = 'ContentJson'
-        })
+        if (references.length) {
+          createNodeField({
+            node,
+            name: field,
+            value: references,
+          })
+        }
       })
-  }
+    })
 }
