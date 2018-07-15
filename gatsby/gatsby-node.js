@@ -4,8 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require('path');
-
 // This callback will automatically create fields for Drupal entity references.
 // Because Site nodes are immutable, you'll need to define mappings yourself in
 // gatsby-config.js.
@@ -47,7 +45,7 @@ exports.onCreateNode = ({ actions, getNodes }) => {
     .forEach(node => {
       Object.keys(node).forEach((field) => {
         if (!node.fields || !node.fields[field]) {
-          let references = [];
+          let references = []
           if (Array.isArray(node[field])) {
             node[field].forEach((value) => {
               if (value.target_uuid) {
@@ -65,7 +63,6 @@ exports.onCreateNode = ({ actions, getNodes }) => {
             })
           }
           if (references.length) {
-            console.log(node.id)
             createNodeField({
               node,
               name: field,
@@ -75,12 +72,11 @@ exports.onCreateNode = ({ actions, getNodes }) => {
         }
       })
       if (node.uri && (!node.fields || !node.fields.file)) {
-        const absolutePath = path.join('../drupal/files/public/', node.uri[0].value.replace('public://', ''))
+        const absolutePath = node.uri[0].value.replace('public://', '../drupal/files/public/')
         const fileNode = getNodes()
           .filter(node2 => node2.internal.type === 'File')
           .find(node2 => node2.absolutePath === absolutePath)
         if (fileNode) {
-          console.log(node.id)
           createNodeField({
             node,
             name: 'file',
