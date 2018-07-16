@@ -12,10 +12,18 @@ const ArticlePage = props => {
             <h1>{article.node.title[0].value}</h1>
             <Img
               alt={article.node.field_image[0].alt}
-              fluid={article.node.fields.field_image[0].fields.file.childImageSharp.fluid}
+              fluid={
+                article.node.fields.field_image[0].fields.file.childImageSharp
+                  .fluid
+              }
             />
-            <p>Created by {article.node.fields.uid[0].name[0].value} on {article.node.created[0].value}</p>
-            <p dangerouslySetInnerHTML={{ __html: article.node.body[0].value }}></p>
+            <p>
+              Created by {article.node.fields.uid[0].name[0].value} on{' '}
+              {article.node.created[0].value}
+            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: article.node.body[0].value }}
+            />
           </article>
         )
       })}

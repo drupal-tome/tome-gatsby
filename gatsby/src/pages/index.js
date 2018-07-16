@@ -11,7 +11,10 @@ const IndexPage = props => (
         <article key={i} className="home-article">
           <Img
             alt={article.node.field_image[0].alt}
-            fixed={article.node.fields.field_image[0].fields.file.childImageSharp.fixed}
+            fixed={
+              article.node.fields.field_image[0].fields.file.childImageSharp
+                .fixed
+            }
             className="home-article__image"
           />
           <div>
