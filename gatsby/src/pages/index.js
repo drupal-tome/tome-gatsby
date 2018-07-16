@@ -2,18 +2,22 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 
 const IndexPage = props => (
   <Layout>
     {props.data.allContentJson.edges.map((article, i) => {
       return (
-        <article key={i}>
-          <img
+        <article key={i} className="home-article">
+          <Img
             alt={article.node.field_image[0].alt}
-            src={article.node.fields.field_image[0].fields.file.publicURL}
+            fixed={article.node.fields.field_image[0].fields.file.childImageSharp.fixed}
+            className="home-article__image"
           />
-          <h2>{article.node.title[0].value}</h2>
-          <Link to={article.node.fields.slug}>Read more</Link>
+          <div>
+            <h2>{article.node.title[0].value}</h2>
+            <Link to={article.node.fields.slug}>Read more</Link>
+          </div>
         </article>
       )
     })}
@@ -40,7 +44,11 @@ export const query = graphql`
             field_image {
               fields {
                 file {
-                  publicURL
+                  childImageSharp {
+                    fixed(width: 200, height: 200) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
                 }
               }
             }

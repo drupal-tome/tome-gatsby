@@ -617,6 +617,13 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+.home-article {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-article__image {
+  margin-right: 10px;
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
