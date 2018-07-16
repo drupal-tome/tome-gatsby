@@ -13,7 +13,7 @@ const IndexPage = props => (
             src={article.node.fields.field_image[0].fields.file.publicURL}
           />
           <h2>{article.node.title[0].value}</h2>
-          <Link to="/article/foo">Read more</Link>
+          <Link to={article.node.fields.slug}>Read more</Link>
         </article>
       )
     })}
@@ -36,6 +36,7 @@ export const query = graphql`
             alt
           }
           fields {
+            slug
             field_image {
               fields {
                 file {
