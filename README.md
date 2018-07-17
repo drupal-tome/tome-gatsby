@@ -98,3 +98,12 @@ allContentJson {
 Long story short - if you have an entity reference field named field_foo, you
 can go straight to the referenced entity with `edges.node.fields.field_foo.*`.
 File entities have a special field `file` which links to the Gatsby file node.
+
+# Automatic page generation
+
+`gatsby/gatsby-node.js` will also generate pages for all Content Types. If a
+URL alias is set that will be used, otherwise the path is auto-generated in the
+format `[type]/[title]`, i.e. `article/my-title`.
+
+This path (known as a slug) will point to a template in `src/templates/[type]`,
+which is how `src/templates/article.js` is invoked.
