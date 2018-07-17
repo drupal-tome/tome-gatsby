@@ -106,4 +106,17 @@ URL alias is set that will be used, otherwise the path is auto-generated in the
 format `[type]/[title]`, i.e. `article/my-title`.
 
 This path (known as a slug) will point to a template in `src/templates/[type]`,
-which is how `src/templates/article.js` is invoked.
+which is how `src/templates/article.js` is invoked. To link to a slug, use a
+query like:
+
+```
+allContentJson {
+  edges {
+    node {
+      fields {
+        slug
+      }
+    }
+  }
+}
+```
