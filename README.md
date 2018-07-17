@@ -32,9 +32,6 @@ To run development servers for Drupal and Gatsby, run:
 Drupal will run at `http://127.0.0.1:8888`, and Gatsby will run at
 `http://127.0.0.1:8000`.
 
-The ideal here is that edits in Drupal would immediately be reflected in
-Gatsby, but this isn't quite working yet.
-
 # Implementation notes
 
 ## Why work with Tome's JSON directly?
