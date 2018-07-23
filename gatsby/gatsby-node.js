@@ -92,10 +92,10 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
         }
       })
       if (node.uri && (!node.fields || !node.fields.file)) {
-        const absolutePath = node.uri[0].value.replace('public://', '../drupal/files/public/')
+        const relativePath = node.uri[0].value.replace('public://', 'public/')
         const fileNode = getNodes()
           .filter(node2 => node2.internal.type === 'File')
-          .find(node2 => node2.absolutePath === absolutePath)
+          .find(node2 => node2.relativePath === relativePath)
         if (fileNode) {
           createNodeField({
             node,

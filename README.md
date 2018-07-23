@@ -1,5 +1,7 @@
 # tome-gatsby
 
+[Demo](https://twitter.com/DrupalSAM/status/1018874932959145984)
+
 An example project for using Tome and Gatsby together.
 
 This allows you to use Drupal locally to edit content, and consume that
@@ -12,8 +14,8 @@ Your Drupal and Gatsby codebases can live together in one repository!
 1. PHP 7+
 1. [Composer](https://getcomposer.org/download/)
 1. [Drush](https://github.com/drush-ops/drush-launcher)
-1. [NPM](https://www.npmjs.com/get-npm)
-1. The `gatsby` command globally available, with `npm i -g gatsby-cli@next`.
+1. [NPM 6+](https://www.npmjs.com/get-npm)
+1. The `gatsby` command installed with `npm i -g gatsby-cli@next`.
 
 # Installation
 
