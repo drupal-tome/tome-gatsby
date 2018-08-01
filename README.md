@@ -14,8 +14,8 @@ Your Drupal and Gatsby codebases can live together in one repository!
 1. PHP 7+
 1. [Composer](https://getcomposer.org/download/)
 1. [Drush](https://github.com/drush-ops/drush-launcher)
-1. [NPM 6+](https://www.npmjs.com/get-npm)
-1. The `gatsby` command installed with `npm i -g gatsby-cli@next`.
+1. [Yarn](https://yarnpkg.com/)
+1. The `gatsby` command globally available, with `yarn global add gatsby-cli@next`.
 
 # Installation
 

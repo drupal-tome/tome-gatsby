@@ -7,4 +7,4 @@ drush tome:install
 cd -
 
 cd gatsby
-npm install
+yarn install
