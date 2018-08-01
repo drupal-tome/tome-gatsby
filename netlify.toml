@@ -3,6 +3,6 @@ ID = "tome-gatsby"
 
 [build]
 NODE_VERSION=9
-YARN_VERSION=1.3.2
+YARN_VERSION="1.3.2"
 command = "cd gatsby && yarn install && yarn run build"
 publish = "gatsby/public"
