@@ -9,6 +9,8 @@ content with GatsbyJS to generate a static site.
 
 Your Drupal and Gatsby codebases can live together in one repository!
 
+You can see the latest build of this demo at https://tome-gatsby.netlify.com
+
 # Requirements
 
 1. PHP 7+
