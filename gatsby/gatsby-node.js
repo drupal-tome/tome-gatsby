@@ -43,14 +43,16 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'ContentJson' && node.type) {
-    let slug;
+    let slug
     if (node.path && node.path[0].alias) {
       slug = node.path[0].alias
-    }
-    else {
+    } else {
       // Use Pathauto so I don't have to write stuff like this!
       let title = node.title[0].value
-      title = title.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]+/g, '').toLowerCase()
+      title = title
+        .replace(/\s+/g, '-')
+        .replace(/[^a-zA-Z0-9\-]+/g, '')
+        .toLowerCase()
       slug = `${node.type[0].target_id}/${title}`
     }
     createNodeField({
@@ -63,17 +65,16 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
   getNodes()
     .filter(node => node.internal.type === 'ContentJson')
     .forEach(node => {
-      Object.keys(node).forEach((field) => {
+      Object.keys(node).forEach(field => {
         let references = []
         if (Array.isArray(node[field])) {
-          node[field].forEach((value) => {
+          node[field].forEach(value => {
             if (value.target_uuid) {
               const refNode = getNodes()
                 .filter(node2 => node2.internal.type === 'ContentJson')
                 .find(
                   node2 =>
-                  node2.uuid &&
-                  node2.uuid[0].value === value.target_uuid
+                    node2.uuid && node2.uuid[0].value === value.target_uuid
                 )
               if (refNode) {
                 references.push(refNode.id)
@@ -125,12 +126,13 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `
-    ).then(result => {
+    `).then(result => {
       result.data.allContentJson.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve(`./src/templates/${node.type[0].target_id}.js`),
+          component: path.resolve(
+            `./src/templates/${node.type[0].target_id}.js`
+          ),
           context: {
             slug: node.fields.slug,
           },
