@@ -64,34 +64,32 @@ exports.onCreateNode = ({ node, actions, getNodes }) => {
     .filter(node => node.internal.type === 'ContentJson')
     .forEach(node => {
       Object.keys(node).forEach((field) => {
-        if (!node.fields || !node.fields[field]) {
-          let references = []
-          if (Array.isArray(node[field])) {
-            node[field].forEach((value) => {
-              if (value.target_uuid) {
-                const refNode = getNodes()
-                  .filter(node2 => node2.internal.type === 'ContentJson')
-                  .find(
-                    node2 =>
-                    node2.uuid &&
-                    node2.uuid[0].value === value.target_uuid
-                  )
-                if (refNode) {
-                  references.push(refNode.id)
-                }
+        let references = []
+        if (Array.isArray(node[field])) {
+          node[field].forEach((value) => {
+            if (value.target_uuid) {
+              const refNode = getNodes()
+                .filter(node2 => node2.internal.type === 'ContentJson')
+                .find(
+                  node2 =>
+                  node2.uuid &&
+                  node2.uuid[0].value === value.target_uuid
+                )
+              if (refNode) {
+                references.push(refNode.id)
               }
-            })
-          }
-          if (references.length) {
-            createNodeField({
-              node,
-              name: field,
-              value: references,
-            })
-          }
+            }
+          })
+        }
+        if (references.length) {
+          createNodeField({
+            node,
+            name: field,
+            value: references,
+          })
         }
       })
-      if (node.uri && (!node.fields || !node.fields.file)) {
+      if (node.uri) {
         const relativePath = node.uri[0].value.replace('public://', 'public/')
         const fileNode = getNodes()
           .filter(node2 => node2.internal.type === 'File')
